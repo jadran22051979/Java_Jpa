@@ -1,6 +1,7 @@
 package com.example.Java_Jpa.dto;
 
 import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -19,7 +20,7 @@ public class HardwareDTO {
     private String hardwareCode;
     @DecimalMin(value = "0.0", message = "Hardware price must be positive")
     private BigDecimal hardwarePrice;
-    @NotNull
+    @Min(1)
     private Integer hardwareQuantity;
     @NotBlank(message = "Category name cannot be blank")
     private String categoryName;
